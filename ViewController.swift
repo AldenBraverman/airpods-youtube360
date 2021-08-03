@@ -17,25 +17,10 @@ var yawEnabled = true
 var pitchEnabled = true
 var rollEnabled = true
 
-class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
-    @IBAction func enablePitch(_ sender: Any) {
-        pitchEnabled = !pitchEnabled
-        if(!pitchEnabled){
-            degreesPitch = 0
-        }
-    }
-    @IBAction func enableRoll(_ sender: Any) {
-        rollEnabled = !rollEnabled
-        if(!rollEnabled){
-            degreesRoll = 0
-        }
-    }
-    @IBAction func enableYaw(_ sender: Any) {
-        yawEnabled = !yawEnabled
-        if(!yawEnabled){
-            degreesYaw = 0
-        }
-    }
+class ViewController: UITableViewController, CMHeadphoneMotionManagerDelegate {
+    @IBOutlet weak var pitchRotation: UILabel!
+    @IBOutlet weak var rollRotation: UILabel!
+    @IBOutlet weak var yawRotation: UILabel!
     
     var motionManager: CMHeadphoneMotionManager!
     
@@ -61,6 +46,10 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
                 } else {
                     degreesRoll = 0;
                 }
+                
+                self.pitchRotation.text = "\(degreesYaw)"
+                self.rollRotation.text = "\(degreesPitch)"
+                self.yawRotation.text = "\(degreesRoll)"
             }
         }
     }
@@ -73,9 +62,4 @@ class ViewController: UIViewController, CMHeadphoneMotionManagerDelegate {
     }
 }
 
-class ContactCell: UITableViewCell {
-    @IBOutlet weak var pitchValue: UILabel!
-    @IBOutlet weak var rollValue: UILabel!
-    @IBOutlet weak var yawValue: UILabel!
-}
 

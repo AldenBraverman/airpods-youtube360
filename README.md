@@ -18,6 +18,8 @@ This repo acts to build an iOS application that meets the project goal. I am fol
 * [Ambisonics in Nuendo 11](https://www.youtube.com/watch?v=-PRjLar7lyw)
 * [Ambisonics in Reaper with Mach1](https://www.youtube.com/watch?v=vIpPwKCZpbo)
 * [Spatial Media Metadata Injector](https://github.com/google/spatial-media/releases)
+* [Audio Stem/Source Seperation](https://github.com/deezer/spleeter)
+* [Rendering 360 Video in Unity](https://www.alanzucconi.com/2020/05/19/360-video-unity/)
 
 
 
